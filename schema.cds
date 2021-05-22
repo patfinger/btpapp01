@@ -26,14 +26,11 @@ entity Subaccount : cuid {
   tenantID                      : String(50)                    @title : 'Tenant ID';
   subdomain                     : String(1000)                  @title : 'Subdomain';
 
-  OrgName                          : String(50)                    @title : 'Org Name';
-  OrgID                   : String(1000)                  @title : 'Org ID';
-  APIEndpoint                      : String(50)                    @title : 'API Endpoint';
-  region                        : String(1000)                  @title : 'Region';
-  environment                   : String(50)                    @title : 'Environment';
-  subaccountID                  : String(1000)                  @title : 'Subaccount ID';
-  tenantID                      : String(50)                    @title : 'Tenant ID';
-  subdomain                     : String(1000)                  @title : 'Subdomain';
+  OrgName                       : String(50)                    @title : 'Org Name';
+  OrgID                         : String(1000)                  @title : 'Org ID';
+  APIEndpoint                   : String(50)                    @title : 'API Endpoint';
+
+  accountOwner                        : String(1000)                  @title : 'Account Owner';
 }
 
 entity Spaces : cuid {
@@ -47,6 +44,11 @@ entity Subscription : cuid {
 }
 
 entity ServiceInstance : cuid {
+  title                  : String(50)                    @title : 'Title';
+  description            : String(1000)                  @title : 'Description';
+}
+
+entity FoundationService : cuid {
   title                  : String(50)                    @title : 'Title';
   description            : String(1000)                  @title : 'Description';
 }
