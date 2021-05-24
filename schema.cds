@@ -41,16 +41,30 @@ entity Spaces : cuid {
 }
 
 entity Subscription : cuid {
-  title                  : String(50)                    @title : 'Title';
-  description            : String(1000)                  @title : 'Description';
+  title                         : String(50)                    @title : 'Title';
+  description                   : String(1000)                  @title : 'Description';
 }
 
 entity ServiceInstance : cuid {
-  title                  : String(50)                    @title : 'Title';
-  description            : String(1000)                  @title : 'Description';
+  instanceName                  : String(50)                    @title : 'Title';
+  service                       : String(1000)                  @title : 'Description';
 }
 
 entity FoundationService : cuid {
-  title                  : String(50)                    @title : 'Title';
-  description            : String(1000)                  @title : 'Description';
+  service                       : String(50)                    @title : 'Service';
+  plan                          : String(100)                   @title : 'Servcie Plan';
+}
+
+entity SpacePlan : cuid {
+  plan                          : String(50)                    @title : 'Plan';
+  description                   : String(1000)                  @title : 'Description';
+  Memory                        : String(10)                    @title : 'Memory';
+  Routes                        : String(10)                    @title : 'Routes';
+  Services                      : String(10)                    @title : 'Services';
+  PaidServicesAllowed           : String(1)                     @title : 'Paid Services allowed';
+}
+
+entity Applications : cuid{
+  appID                         : String(10)                    @title : 'Application ID';
+  appManager                    : String(100)                   @title : 'Application Manager';
 }
