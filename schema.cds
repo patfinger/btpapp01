@@ -17,25 +17,27 @@ entity GlobalAccount : cuid {
 }
   
 entity Subaccount : cuid {
-  name                          : String(50)                    @title : 'Name';
+  name                          : String(100)                   @title : 'Name';
   description                   : String(1000)                  @title : 'Description';
-  provider                      : String(50)                    @title : 'Provider';
-  region                        : String(1000)                  @title : 'Region';
-  environment                   : String(50)                    @title : 'Environment';
-  subaccountID                  : String(1000)                  @title : 'Subaccount ID';
+  provider                      : String(100)                   @title : 'Provider';
+  region                        : String(100)                   @title : 'Region';
+  environment                   : String(100)                   @title : 'Environment';
+  subaccountID                  : String(50)                    @title : 'Subaccount ID';
   tenantID                      : String(50)                    @title : 'Tenant ID';
-  subdomain                     : String(1000)                  @title : 'Subdomain';
-
-  OrgName                       : String(50)                    @title : 'Org Name';
-  OrgID                         : String(1000)                  @title : 'Org ID';
-  APIEndpoint                   : String(50)                    @title : 'API Endpoint';
-
-  accountOwner                        : String(1000)                  @title : 'Account Owner';
+  subdomain                     : String(50)                    @title : 'Subdomain';
+  orgName                       : String(50)                    @title : 'Org Name';
+  orgID                         : String(50)                    @title : 'Org ID';
+  apiEndpoint                   : String(100)                   @title : 'API Endpoint';
+  accountOwner                  : String(1000)                  @title : 'Account Owner';
+  businessDomain                : String(1000)                  @title : 'Business Domain';
+  accountType                   : String(10)                    @title : 'Account Type';
+  eamID                         : String(25)                    @title : 'EAM ID';
 }
 
 entity Spaces : cuid {
-  title                  : String(50)                    @title : 'Title';
-  description            : String(1000)                  @title : 'Description';
+  name                          : String(50)                    @title :  'Name';
+  description                   : String(1000)                  @title : 'Description';
+  eamID                         : String(25)                    @title : 'EAM ID';
 }
 
 entity Subscription : cuid {
