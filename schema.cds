@@ -1,10 +1,5 @@
 namespace pag.sap.paas;
 
-using {
-  cuid,
-  sap.common
-} from '@sap/cds/common';
-
 entity GlobalAccount {
   key accountID                 : String(50)                    @title : 'Account ID';
   accountType                   : String(1000)                  @title : 'Account Type';
