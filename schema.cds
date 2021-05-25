@@ -1,12 +1,12 @@
-namespace scp.cloud;
+namespace pag.sap.paas;
 
 using {
   cuid,
   sap.common
 } from '@sap/cds/common';
 
-entity GlobalAccount : cuid {
-  accountID                     : String(50)                    @title : 'Account ID';
+entity GlobalAccount {
+  key accountID                 : String(50)                    @title : 'Account ID';
   accountType                   : String(1000)                  @title : 'Account Type';
   access                        : String(1000)                  @title : 'Account Type';
   contractType                  : String (50)                   @title : 'Contract Type';
@@ -16,15 +16,15 @@ entity GlobalAccount : cuid {
   description                   : String(1000)                  @title : 'Description';
 }
   
-entity Subaccount : cuid {
+entity Subaccount {
+  key subaccountID              : String(50)                    @title : 'Subaccount ID';
+  subdomain                     : String(50)                    @title : 'Subdomain';
+  tenantID                      : String(50)                    @title : 'Tenant ID';
   name                          : String(100)                   @title : 'Name';
   description                   : String(1000)                  @title : 'Description';
   provider                      : String(100)                   @title : 'Provider';
   region                        : String(100)                   @title : 'Region';
   environment                   : String(100)                   @title : 'Environment';
-  subaccountID                  : String(50)                    @title : 'Subaccount ID';
-  tenantID                      : String(50)                    @title : 'Tenant ID';
-  subdomain                     : String(50)                    @title : 'Subdomain';
   orgName                       : String(50)                    @title : 'Org Name';
   orgID                         : String(50)                    @title : 'Org ID';
   apiEndpoint                   : String(100)                   @title : 'API Endpoint';
@@ -34,28 +34,32 @@ entity Subaccount : cuid {
   eamID                         : String(25)                    @title : 'EAM ID';
 }
 
-entity Spaces : cuid {
-  name                          : String(50)                    @title :  'Name';
+entity Spaces {
+  key spaceID                   : String(50)                    @title : 'Space ID';
+  name                          : String(50)                    @title : 'Name';
   description                   : String(1000)                  @title : 'Description';
   eamID                         : String(25)                    @title : 'EAM ID';
 }
 
-entity Subscription : cuid {
+entity Subscription {
+  Subscription                  : String(50)                    @title : 'Subscription';
+  Plan                          : String(50)                    qtitle : 'Service Plan';
   title                         : String(50)                    @title : 'Title';
   description                   : String(1000)                  @title : 'Description';
 }
 
-entity ServiceInstance : cuid {
+entity ServiceInstance {
   instanceName                  : String(50)                    @title : 'Title';
-  service                       : String(1000)                  @title : 'Description';
+  service                       : String(1000)                  @title : 'Service';
 }
 
-entity FoundationService : cuid {
-  service                       : String(50)                    @title : 'Service';
-  plan                          : String(100)                   @title : 'Servcie Plan';
+entity FoundationService {
+  key service                       : String(50)                   @title : 'Service';
+  key plan                          : String(100)                   @title : 'Servcie Plan';
+  key region                        : String(50)                    @title : 'Region';
 }
 
-entity SpacePlan : cuid {
+entity SpacePlan {
   plan                          : String(50)                    @title : 'Plan';
   description                   : String(1000)                  @title : 'Description';
   Memory                        : String(10)                    @title : 'Memory';
@@ -64,7 +68,7 @@ entity SpacePlan : cuid {
   PaidServicesAllowed           : String(1)                     @title : 'Paid Services allowed';
 }
 
-entity Applications : cuid{
+entity Applications {
   appID                         : String(10)                    @title : 'Application ID';
   appManager                    : String(100)                   @title : 'Application Manager';
 }
