@@ -14,6 +14,7 @@ entity GlobalAccount {
   plannedContractEnd            : String (50)                   @title : 'Planned Contract End';
   name                          : String(1000)                  @title : 'Name';
   description                   : String(1000)                  @title : 'Description';
+  globalAccountManager          : String(200)                   @title : 'Global Account Manager';
 }
   
 entity Subaccount {
@@ -43,7 +44,7 @@ entity Spaces {
 
 entity Subscription {
   Subscription                  : String(50)                    @title : 'Subscription';
-  Plan                          : String(50)                    qtitle : 'Service Plan';
+  Plan                          : String(50)                    @title : 'Service Plan';
   title                         : String(50)                    @title : 'Title';
   description                   : String(1000)                  @title : 'Description';
 }
@@ -54,9 +55,9 @@ entity ServiceInstance {
 }
 
 entity FoundationService {
-  key service                       : String(50)                   @title : 'Service';
-  key plan                          : String(100)                   @title : 'Servcie Plan';
-  key region                        : String(50)                    @title : 'Region';
+  key service                   : String(50)                    @title : 'Service';
+  key plan                      : String(100)                   @title : 'Servcie Plan';
+  key region                    : String(50)                    @title : 'Region';
 }
 
 entity SpacePlan {
@@ -69,6 +70,6 @@ entity SpacePlan {
 }
 
 entity Applications {
-  appID                         : String(10)                    @title : 'Application ID';
+  key appID                     : String(10)                    @title : 'Application ID';
   appManager                    : String(100)                   @title : 'Application Manager';
 }
